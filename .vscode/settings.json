@@ -1,0 +1,13 @@
+{
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "editor.formatOnType": true,
+  "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+}
