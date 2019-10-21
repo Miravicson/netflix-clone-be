@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const passport = require('passport');
+const configJwt = require('./utils/passport-jwt');
 const config = require('./config');
 const router = require('./api/route');
 const logger = require('./utils/logger');
@@ -14,8 +16,10 @@ const logger = require('./utils/logger');
 const composeApp = (decorators, expressApp) => decorators.reduce((app, decorator) => decorator(app), expressApp);
 
 const middlewareDecorator = app => {
+  configJwt();
   app.use(cors());
   app.use(morgan('combined'));
+  app.use(passport.initialize());
   app.use(express.json());
   app.use(
     express.urlencoded({

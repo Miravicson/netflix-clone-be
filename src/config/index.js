@@ -13,6 +13,8 @@ const config = {
   mongodbUrl: verifyEnvVariable('MONGODB'),
   omdbKey: verifyEnvVariable('OMDB_KEY'),
   omdbBaseUrl: verifyEnvVariable('OMDB_BASE_URL'),
+  secret: verifyEnvVariable('SECRET'),
+  registerToken: verifyEnvVariable('REGISTRATION_TOKEN'),
 };
 
 module.exports = config;
